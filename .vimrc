@@ -23,6 +23,6 @@ set smartcase
 "display filename
 set laststatus=2
 set wildmenu
-set wildmenu=longest:full,full
+set wildmode=longest:full,full
 "display incomplete command
 set showcmd
