@@ -27,7 +27,9 @@ set wildmode=longest:full,full
 "display incomplete command
 set showcmd
 
-"
+"display 256 color
+set t_Co=256
+colorscheme industry
 
 function MoveToPrevTab()
     "there is only one window
@@ -72,6 +74,33 @@ function MoveToNextTab()
     "opening current buffer in new window
     exe "b".l:cur_buf
 endfunc
+
+" Some hack to make Alt key working thanks to Stackoverflow
+let c='a'
+while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+endw
+
+""" SECTION: KEY BINDING
+" Mimic Emacs Line Editing in Insert Mode Only
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+" â is <Alt-B>, æ is <Alt-F>
+inoremap â <C-Left>
+inoremap æ <C-Right>
+" Scrolling <M-C> and <M-V>
+inoremap ö <Esc><C-D>i
+inoremap ã <Esc><C-U>i
+inoremap <C-K> <Esc>lDa
+inoremap <C-U> <Esc>d0xi
+inoremap <C-Y> <Esc>Pa
+inoremap <C-X><C-S> <Esc>:w<CR>a
 
 noremap <C-W>< :call MoveToPrevTab() <cr>
 noremap <C-W>> :call MoveToNextTab() <cr>
