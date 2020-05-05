@@ -84,23 +84,23 @@ while c <= 'z'
 endw
 
 """ SECTION: KEY BINDING
-" Mimic Emacs Line Editing in Insert Mode Only
+" Emacs binding in insert mode
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
 inoremap <C-B> <Left>
 inoremap <C-F> <Right>
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
+inoremap <C-K> <Esc>lDa
+inoremap <C-U> <Esc>d0xi
+inoremap <C-Y> <Esc>Pa
+inoremap <C-X><C-S> <Esc>:w<CR>a
 " â is <Alt-B>, æ is <Alt-F>
 inoremap â <C-Left>
 inoremap æ <C-Right>
 " Scrolling <M-C> and <M-V>
 inoremap ö <Esc><C-D>i
 inoremap ã <Esc><C-U>i
-inoremap <C-K> <Esc>lDa
-inoremap <C-U> <Esc>d0xi
-inoremap <C-Y> <Esc>Pa
-inoremap <C-X><C-S> <Esc>:w<CR>a
 
 noremap <C-W>< :call MoveToPrevTab() <cr>
 noremap <C-W>> :call MoveToNextTab() <cr>
