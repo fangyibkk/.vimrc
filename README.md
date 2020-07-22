@@ -18,3 +18,7 @@ paste in command mode
 CTRL+R 0
 // register 0
 ```
+## Visual mode replace
+would like to replace content in for example `{}`, `[]`, `""` \
+**Problem**: `ci{` will yank and override the copied word in register \
+**Solution**: use visual mode to select `vi{` then paste the content in the register
