@@ -28,3 +28,7 @@ would like to replace content in for example `{}`, `[]`, `""` \
 `df,` delete until `,` including ',' \
 `dT,` delete backward until `,` \
 `dF,` delete backward until `,` including ','
+
+## Insert mode editing
+`Ctrl-h` replace backspace
+`Ctrl-w` replace delete word backword
